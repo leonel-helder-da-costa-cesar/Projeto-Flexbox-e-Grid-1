@@ -1,0 +1,123 @@
+body, ul, li, p { 
+    margin: 0px;
+    padding: 0px;
+    list-style: none;
+    font-size: 1.2rem;
+    font-family: Arial;
+}
+
+:root {
+    --azul: #257aaf;
+    --amarelo: #F2B705;
+    --vermelho: #F21D1D;
+}
+
+body { 
+    margin-bottom: 100px;
+}
+
+a { 
+    text-decoration: none;
+    color: white;
+    font-weight: bold;
+}
+
+.header { 
+    background: var(--azul);
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
+}
+
+h1 { 
+    color: var(--vermelho);
+    text-align: center;
+    margin-top: 100px;
+    font-weight: bolder;
+}
+
+p { 
+    text-indent: 14px;
+    font-style: italic;
+    color: var(--azul);
+    font-size: 1.1rem;
+}
+
+.menu { 
+    display: flex;
+}
+
+.menu li { 
+    margin-left: 10px;
+}
+.menu li a { 
+    display: block;
+    padding: 10px;
+}
+
+img { 
+    display: block;
+    width: 250px;
+    height: 140px;
+    max-width: 100%;
+   
+}
+
+.flex {
+     display: flex;
+     flex-wrap: wrap;
+     max-width: 800px;
+     margin: 0 auto;
+}
+
+.flex > div { 
+    flex: 1 1 200px;
+    margin: 10px;
+}
+
+
+/* CSS GRID 1 */
+
+.grid1 { 
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    max-width: 790px;
+    padding: 17px;
+    margin: 0 auto;
+    grid-gap: 20px; 
+}
+
+.grid1> div:nth-child(n + 4) {
+   display: grid;
+   grid-template-columns: 1fr 1fr;
+   grid-gap: 1px;
+   align-items: center;
+}
+
+.grid1 > div.anuncio { 
+    grid-column: 1;
+    grid-row: 2 / 5;
+    border-top: 10px solid var(--vermelho);
+    display: block;
+}
+
+@media (max-width: 600px) {
+    .grid1 { 
+        grid-template-columns: repeat(2, 1fr);
+    }
+    .grid1> div:nth-child(n + 4) {
+        display: block;
+    }
+    .grid1 > div.anuncio { 
+        grid-column: auto;
+        grid-row: auto;
+        order: -1;
+    }
+}
+
+
+
+
+
